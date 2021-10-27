@@ -56,5 +56,6 @@ int main()
         printf("Total Marks of %d student is %d",i+1,students[i].Total_marks);
         printf(",and Grade is %.2lf\n",students[i].grade);
     }
+    printf("\n");
     return 0;
 }
