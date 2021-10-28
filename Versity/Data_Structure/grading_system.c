@@ -37,50 +37,48 @@ void print(int arr[],int n){
     }
     printf("\n");
 }
+int takeinput(struct marks *std){
+    printf("Enter ID : ");
+    scanf("%d",&std->id);
+    printf("Final Exam Marks : ");
+    scanf("%d",&std->Final);
+    printf("Mid Exam Marks : ");
+    scanf("%d",&std->Mid);
+    printf("Attendance : ");
+    scanf("%d",&std->Attendance);
+    printf("Assignment : ");
+    scanf("%d",&std->Assignment);
+    printf("1st Quiz : ");
+    scanf("%d",&std->Quiz1);
+    printf("2nd Quiz : ");
+    scanf("%d",&std->Quiz2);
+    printf("3rd Quiz : ");
+    scanf("%d",&std->Quiz3);
+    int mx = max(max(std->Quiz1,std->Quiz2),std->Quiz3);
+    int F = std->Final,M = std->Mid,A = std->Assignment,A2 = std->Attendance;
+    int sum = mx + F + M + A + A2 ;
+    std->Total_marks = sum;
+    std->grade = Grade(sum);
+    return sum;
+}
 int main()
 {
-    struct marks students[1000];
+    struct marks std[1000];
+    int stdnum,tmp[10000],Size = 0;
     printf("Enter The Number Of Students : ");
-    int n,sum = 0,tmp[10000],Size = 0;
-    scanf("%d",&n);
-    for(int i = 0;i<n;i++){
-        sum = 0;
-        printf("Enter Marks OF %d : \n",i+1);
-        printf("ID No : ");
-        scanf("%d",&students[i].id);
-        printf("Final Exam : ");
-        scanf("%d",&students[i].Final);
-        sum += students[i].Final;
-        printf("Mid Exam : ");
-        scanf("%d",&students[i].Mid);
-        sum += students[i].Mid;
-        printf("Attendance : ");
-        scanf("%d",&students[i].Attendance);
-        sum += students[i].Attendance;
-        printf("Assignment : ");
-        scanf("%d",&students[i].Assignment);
-        sum += students[i].Assignment;
-        printf("1st Quiz : ");
-        scanf("%d",&students[i].Quiz1);
-        printf("2nd Quiz : ");
-        scanf("%d",&students[i].Quiz2);
-        printf("3rd Quiz : ");
-        scanf("%d",&students[i].Quiz3);
-        int mx = max(max(students[i].Quiz1,students[i].Quiz2),students[i].Quiz3);
-        sum += mx;
-        students[i].Total_marks = sum;
-        students[i].grade = Grade(sum);
+    scanf("%d",&stdnum);
+    for(int i = 0;i<stdnum;i++){
+        printf("Enter Marks OF %d student : \n",i+1);
+        int sum = takeinput(&std[i]);
         tmp[Size++] = sum;
     }
-    print(tmp,Size);
-    sort(tmp,Size);
-    print(tmp,Size);
+    sort(tmp,Size);// Descending order 
     for(int i = 0;i<Size;i++){
-        for(int j = 0;j<Size;i++){
-            if(tmp[i] == students[j].Total_marks){
-                int x = students[j].id;
-                double y = students[j].grade;
-                printf("Position = %d Id = %d Grade = %.2lf\n",i+1,x,y);
+        for(int j = 0;j<Size;j++){
+            if(tmp[i] == std[j].Total_marks){
+                int x = std[j].id,m = std[j].Total_marks;
+                double y = std[j].grade;
+                printf("At Position = %d Is Id No = %d With Grade = %.2lf and marks = %d\n",i+1,x,y,m);
                 break;
             }
         }
