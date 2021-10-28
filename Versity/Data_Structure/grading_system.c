@@ -1,6 +1,7 @@
 #include <stdio.h>
 struct marks{
     int Final,Mid,Quiz1,Quiz2,Quiz3,Attendance,Assignment,Total_marks,id;
+    char name[50];
     double grade;
 };
 int max(int a,int b){
@@ -31,15 +32,11 @@ void sort(int arr[],int n){
         }
     }
 }
-void print(int arr[],int n){
-    for(int i = 0;i<n;i++){
-        printf("%d ",arr[i]);
-    }
-    printf("\n");
-}
 int takeinput(struct marks *std){
     printf("Enter ID : ");
     scanf("%d",&std->id);
+    printf("Enter Name : ");
+    scanf("%s",&std->name);
     printf("Final Exam Marks : ");
     scanf("%d",&std->Final);
     printf("Mid Exam Marks : ");
@@ -72,13 +69,13 @@ int main()
         int sum = takeinput(&std[i]);
         tmp[Size++] = sum;
     }
-    sort(tmp,Size);// Descending order 
+    sort(tmp,Size);
     for(int i = 0;i<Size;i++){
         for(int j = 0;j<Size;j++){
             if(tmp[i] == std[j].Total_marks){
                 int x = std[j].id,m = std[j].Total_marks;
                 double y = std[j].grade;
-                printf("At Position = %d Is Id No = %d With Grade = %.2lf and marks = %d\n",i+1,x,y,m);
+                printf("At Position = %d Is %s Id No = %d With Grade = %.2lf and marks = %d\n",i+1,std[j].name,x,y,m);
                 break;
             }
         }
