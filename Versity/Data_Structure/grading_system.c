@@ -4,10 +4,12 @@
  **/
 #include <stdio.h>
 struct marks{
-    int Final,Mid,Quiz1,Quiz2,Quiz3,Attendance,Assignment,Total_marks,id;
+    int Final,Mid,Quiz1,Quiz2,Quiz3,id;
+    int Attendance,Assignment,Total_marks;
     char name[50];
     double grade;
 };
+
 int max(int a,int b){
     if(a>b)return a;
     return b;
@@ -25,22 +27,22 @@ double Grade(int total)
     else if(total >= 40)return 2.00;
     else return 0.00; 
 }
-void sort(int arr[],int n){
+void sort(struct marks arr[],int n){
     for(int i = 0;i<n;i++){
         for(int j = 0;j<n-1;j++){
-            if(arr[j] < arr[j+1]){
-                int tmp = arr[j];
+            if(arr[j].Total_marks < arr[j+1].Total_marks){
+                struct marks tmp = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = tmp;
             }
         }
     }
 }
-int takeinput(struct marks *std){
+void takeinput(struct marks *std){
+    printf("Enter Name : ");
+    scanf("%[^\n]s",&std->name);
     printf("Enter ID : ");
     scanf("%d",&std->id);
-    printf("Enter Name : ");
-    scanf("%s",&std->name);
     printf("Final Exam Marks : ");
     scanf("%d",&std->Final);
     printf("Mid Exam Marks : ");
@@ -56,11 +58,11 @@ int takeinput(struct marks *std){
     printf("3rd Quiz : ");
     scanf("%d",&std->Quiz3);
     int mx = max(max(std->Quiz1,std->Quiz2),std->Quiz3);
-    int F = std->Final,M = std->Mid,A = std->Assignment,A2 = std->Attendance;
+    int F = std->Final,M = std->Mid;
+    int A = std->Assignment,A2 = std->Attendance;
     int sum = mx + F + M + A + A2 ;
     std->Total_marks = sum;
     std->grade = Grade(sum);
-    return sum;
 }
 int main()
 {
@@ -70,29 +72,23 @@ int main()
     scanf("%d",&stdnum);
     for(int i = 0;i<stdnum;i++){
         printf("Enter Marks OF %d student : \n",i+1);
-        int sum = takeinput(&std[i]);
-        tmp[Size++] = sum;
+        getchar();
+        takeinput(&std[i]);
     }
-    sort(tmp,Size);
-    for(int i = 0;i<Size;i++){
-        for(int j = 0;j<Size;j++){
-            if(tmp[i] == std[j].Total_marks){
-                int x = std[j].id,m = std[j].Total_marks;
-                double y = std[j].grade;
-                printf("At Position = %d Is %s Id No = %d With Grade = %.2lf and marks = %d\n",i+1,std[j].name,x,y,m);
-                std[j].Total_marks = 0;
-                break;
-            }
-        }
+    sort(std,stdnum);
+    for(int i = 0;i<stdnum;i++){
+        printf("%s ID No : %d is ",std[i].name,std[i].id);
+        printf("at %dth position with marks %d ",i+1,std[i].Total_marks);
+        printf("ans grade %.2lf\n",std[i].grade);
     }
     return 0;
 }
 /**
- * Input : 
+ * INPUT:
     Enter The Number Of Students : 5
     Enter Marks OF 1 student : 
-    Enter ID : 2015302501
     Enter Name : A
+    Enter ID : 2015302505
     Final Exam Marks : 38
     Mid Exam Marks : 25
     Attendance : 8
@@ -101,8 +97,8 @@ int main()
     2nd Quiz : 10
     3rd Quiz : 8
     Enter Marks OF 2 student : 
-    Enter ID : 2015302502
     Enter Name : B
+    Enter ID : 2015302502
     Final Exam Marks : 38
     Mid Exam Marks : 27
     Attendance : 10
@@ -111,8 +107,8 @@ int main()
     2nd Quiz : 5
     3rd Quiz : 6
     Enter Marks OF 3 student : 
-    Enter ID : 2015302503
     Enter Name : C
+    Enter ID : 2015302503
     Final Exam Marks : 39
     Mid Exam Marks : 24
     Attendance : 10
@@ -120,9 +116,9 @@ int main()
     1st Quiz : 10
     2nd Quiz : 10
     3rd Quiz : 10
-    Enter Marks OF 4 student : 
-    Enter ID : 2015302504
+    Enter Marks OF 4 student :
     Enter Name : D
+    Enter ID : 2015302504
     Final Exam Marks : 40
     Mid Exam Marks : 30
     Attendance : 10
@@ -130,9 +126,9 @@ int main()
     1st Quiz : 10
     2nd Quiz : 10
     3rd Quiz : 10
-    Enter Marks OF 5 student : 
-    Enter ID : 2015302505
+    Enter Marks OF 5 student :
     Enter Name : E
+    Enter ID : 2015302505
     Final Exam Marks : 35
     Mid Exam Marks : 26
     Attendance : 7
@@ -140,10 +136,10 @@ int main()
     1st Quiz : 9
     2nd Quiz : 7
     3rd Quiz : 5
- *Output:
-    At Position = 1 Is D Id No = 2015302504 With Grade = 4.00 and marks = 100
-    At Position = 2 Is C Id No = 2015302503 With Grade = 4.00 and marks = 93
-    At Position = 3 Is A Id No = 2015302501 With Grade = 4.00 and marks = 90
-    At Position = 4 Is B Id No = 2015302502 With Grade = 4.00 and marks = 90
-    At Position = 5 Is E Id No = 2015302505 With Grade = 4.00 and marks = 85
-*/
+*OUTPUT:
+    D ID No : 2015302504 is at 1th position with marks 100 ans grade 4.00
+    C ID No : 2015302503 is at 2th position with marks 93 ans grade 4.00
+    A ID No : 2015302501 is at 3th position with marks 90 ans grade 4.00
+    B ID No : 2015302502 is at 4th position with marks 90 ans grade 4.00
+    E ID No : 2015302505 is at 5th position with marks 85 ans grade 4.00
+ **/
