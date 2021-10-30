@@ -31,17 +31,20 @@ ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve()
 {
-
+    cin >> n;
+    ans = 0;
+    rep(i,n)cin >> x,ans += (x == -1);
+    cout << ans+1 ;
 }
 int main()
 {
     #ifndef ONLINE_JUDGE
     freopen("codeforces.txt", "r", stdin);
     #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);cout.tie(0);
-    int t;cin >> t;
-    Rep(i, 1, t + 1)
+    // ios_base::sync_with_stdio(false);
+    // cin.tie(0);cout.tie(0);
+    // int t;cin >> t;
+    // Rep(i, 1, t + 1)
         //cout << "Case #" << i << ": ",
         solve();
     return 0;
