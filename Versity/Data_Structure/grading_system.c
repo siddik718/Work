@@ -79,7 +79,7 @@ int main()
     for(int i = 0;i<stdnum;i++){
         printf("%s ID No : %d is ",std[i].name,std[i].id);
         printf("at %dth position with marks %d ",i+1,std[i].Total_marks);
-        printf("ans grade %.2lf\n",std[i].grade);
+        printf("and grade %.2lf\n",std[i].grade);
     }
     return 0;
 }
@@ -137,9 +137,9 @@ int main()
     2nd Quiz : 7
     3rd Quiz : 5
 *OUTPUT:
-    D ID No : 2015302504 is at 1th position with marks 100 ans grade 4.00
-    C ID No : 2015302503 is at 2th position with marks 93 ans grade 4.00
-    A ID No : 2015302501 is at 3th position with marks 90 ans grade 4.00
-    B ID No : 2015302502 is at 4th position with marks 90 ans grade 4.00
-    E ID No : 2015302505 is at 5th position with marks 85 ans grade 4.00
+    D ID No : 2015302504 is at 1th position with marks 100 and grade 4.00
+    C ID No : 2015302503 is at 2th position with marks 93 and grade 4.00
+    A ID No : 2015302501 is at 3th position with marks 90 and grade 4.00
+    B ID No : 2015302502 is at 4th position with marks 90 and grade 4.00
+    E ID No : 2015302505 is at 5th position with marks 85 and grade 4.00
  **/
