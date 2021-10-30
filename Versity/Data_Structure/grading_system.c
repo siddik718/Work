@@ -88,7 +88,7 @@ int main()
     Enter The Number Of Students : 5
     Enter Marks OF 1 student : 
     Enter Name : A
-    Enter ID : 2015302505
+    Enter ID : 2015302501
     Final Exam Marks : 38
     Mid Exam Marks : 25
     Attendance : 8
