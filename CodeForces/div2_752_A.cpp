@@ -34,7 +34,7 @@ void solve(){
     cin >> n;
     Rep(i,1,n+1){
         cin >> x;
-        ans = max(ans,x-i);
+        ans = max(ans,x-i); // BCZ we can simply put ans number of 1 at the beggining of the array.
     }
     cout << ans << '\n';
 }
