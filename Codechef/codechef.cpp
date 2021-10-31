@@ -6,9 +6,10 @@
 #define all(var) var.begin(), var.end()
 #define rep(i, n) for (int i = 0; i < (n); i++)
 using namespace std;
-
+ll n,m,a,b,c,l,r;
 void solve()
 {
+    
 }
 int main()
 {

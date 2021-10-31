@@ -29,8 +29,20 @@ int CountBit(ll n) { return __builtin_popcountll(n); }
 ll arr[SIZE], pre_sum[SIZE];
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
-void solve()
-{
+void solve(){
+    cin >> n;
+    rep(i,n)cin >> arr[i];
+    if(n%2 == 0){
+        cout << "Yes\n";
+        return;
+    }
+   Rep(i,1,n){
+       if(arr[i] <= arr[i-1]){
+           cout << "Yes\n";
+           return;
+       }
+   }
+   cout << "No\n";
 }
 int main()
 {
