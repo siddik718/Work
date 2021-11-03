@@ -31,6 +31,7 @@ ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve()
 {
+    
 }
 int main()
 {
