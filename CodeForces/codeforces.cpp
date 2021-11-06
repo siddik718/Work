@@ -31,7 +31,15 @@ ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve()
 {
-    
+    cin >> x >> y;
+    ans = 0;l = 1;
+    while(l < y){
+        if(n >= x)break;
+        l *= 2;
+        ans++;
+    }
+    if(l < x)ans += ((x-l)+y-1)/y;
+    cout << ans << '\n';
 }
 int main()
 {

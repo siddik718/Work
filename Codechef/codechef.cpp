@@ -1,19 +1,11 @@
 #include <bits/stdc++.h>
-#define F first
-#define S second
-#define pb push_back
-#define ll long long int
-#define all(var) var.begin(), var.end()
-#define rep(i, n) for (int i = 0; i < (n); i++)
+#define rep(i,a,n) for (int i = (a); i <= (n); i++)
 using namespace std;
-ll n,m,a,b,c,l,r;
-void solve()
-{
-    
+using ll = long long int;
+void solve(){
 }
-int main()
-{
-    //freopen("codechef.txt", "r", stdin);
+int main(){
+    freopen("codechef.txt", "r", stdin);
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
     ll t;cin >> t;

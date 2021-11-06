@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-int dx[] = {-1,1,0,0,-1,-1,1,1};
-int dy[] = {0,0,-1,1,-1,1,-1,1};
+int dx[] = { 2, 1, -1, -2, -2, -1, 1, 2 };
+int dy[] = { 1, 2, 2, 1, -1, -2, -2, -1 };
 int dist[100][100],vis[100][100],cell[100][100];
 int n,m;
 bool isValid(int x,int y){
@@ -15,7 +15,7 @@ void bfs(int x,int y){
     q.push({x,y});
     while(!q.empty()){
         auto top = q.front();q.pop();
-        for(int i = 0;i<4;i++){
+        for(int i = 0;i<8;i++){
             int x = top.first+dx[i];
             int y = top.second+dy[i];
             if(isValid(x,y)){
