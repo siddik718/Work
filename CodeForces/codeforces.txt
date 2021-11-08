@@ -1,5 +1,11 @@
-4
-8 3
-6 6
-7 1
-1 1
+1
+9 4
+abab
+baba
+abcd
+bcde
+cdef
+defg
+wxyz
+zyxw
+ijji
