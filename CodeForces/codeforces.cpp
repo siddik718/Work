@@ -30,13 +30,8 @@ ll arr[SIZE], pre_sum[SIZE];
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
-    cin >> n >> m;
-    string Array[n];
-    rep(i,n)cin >> Array[i];
-   
 }
-int main()
-{
+int main(){
     #ifndef ONLINE_JUDGE
     freopen("codeforces.txt", "r", stdin);
     #endif
@@ -45,6 +40,6 @@ int main()
     int t;cin >> t;
     Rep(i, 1, t + 1)
         //cout << "Case #" << i << ": ",
-        solve();
+         solve();
     return 0;
 }
