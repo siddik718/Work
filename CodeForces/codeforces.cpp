@@ -24,6 +24,7 @@ int SetBit(ll n, ll X) { return n | (1LL << X); }
 int ClearBit(ll n, ll X) { return n & ~(1LL << X); }
 int ToggleBit(ll n, ll X) { return n ^ (1LL << X); }
 bool CheckBit(ll n, ll X) { return (bool)(n & (1LL << X)); }
+bool isPowerOf2(ll x){return x && (!(x&(x-1)));}
 int CountBit(ll n) { return __builtin_popcountll(n); }
 
 ll arr[SIZE], pre_sum[SIZE];
@@ -37,8 +38,8 @@ int main(){
     #endif
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
-    int t;cin >> t;
-    Rep(i, 1, t + 1)
+    // int t;cin >> t;
+    // Rep(i, 1, t + 1)
         //cout << "Case #" << i << ": ",
          solve();
     return 0;
