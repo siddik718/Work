@@ -31,6 +31,7 @@ ll arr[SIZE], pre_sum[SIZE];
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
+   
 }
 int main(){
     #ifndef ONLINE_JUDGE
@@ -38,8 +39,8 @@ int main(){
     #endif
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
-    // int t;cin >> t;
-    // Rep(i, 1, t + 1)
+    int t;cin >> t;
+    Rep(i, 1, t + 1)
         //cout << "Case #" << i << ": ",
          solve();
     return 0;
