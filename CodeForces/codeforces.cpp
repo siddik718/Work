@@ -29,13 +29,25 @@ int CountBit(ll n) { return __builtin_popcountll(n); }
 
 ll arr[SIZE], pre_sum[SIZE];
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
-
+ll work(ll n){
+    n++;
+    while(n%10 == 0)n/=10;
+    return n;
+}
 void solve(){
-   
+    cin >> n;
+    set <int> s;
+    x = 100;
+    while(x--){
+        s.insert(n);
+        n = work(n);
+    }
+    cout << (int)s.size() << '\n';
 }
 int main(){
     #ifndef ONLINE_JUDGE
-    freopen("codeforces.txt", "r", stdin);
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
     #endif
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
