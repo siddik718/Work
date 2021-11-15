@@ -15,34 +15,21 @@
 using ll = long long int;
 using namespace std;
 
-const int inf = 1e9 + 10;
+const int inf = 1e9 + 7;
 const ll INF = 1e18 + 10;
-const int SIZE = 1e6 + 10;
-const ll MOD = 1e9 + 7;
 
 int SetBit(ll n, ll X) { return n | (1LL << X); }
 int ClearBit(ll n, ll X) { return n & ~(1LL << X); }
 int ToggleBit(ll n, ll X) { return n ^ (1LL << X); }
 bool CheckBit(ll n, ll X) { return (bool)(n & (1LL << X)); }
-bool isPowerOf2(ll x){return x && (!(x&(x-1)));}
+bool isPowerOf2(ll X) {return X && ( !(X & (X-1) ) ) ; }
 int CountBit(ll n) { return __builtin_popcountll(n); }
 
-ll arr[SIZE], pre_sum[SIZE];
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
-ll work(ll n){
-    n++;
-    while(n%10 == 0)n/=10;
-    return n;
-}
+
 void solve(){
     cin >> n;
-    set <int> s;
-    x = 100;
-    while(x--){
-        s.insert(n);
-        n = work(n);
-    }
-    cout << (int)s.size() << '\n';
+    cout << n+1 << '\n';
 }
 int main(){
     #ifndef ONLINE_JUDGE
