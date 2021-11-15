@@ -1,10 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    freopen("de.txt","r",stdin);
-    int t,n;cin >> t;
-    while(t--){
-        
-    }
+    string a = "ddbccccccccccccccccccccd",b = "adbccccccccccccccccccccd";
+    cout << min(a,b);
     return 0;
 }

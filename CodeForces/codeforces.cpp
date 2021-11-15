@@ -29,7 +29,17 @@ ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
     cin >> n;
-    cout << n+1 << '\n';
+    string a;cin >> a;
+    int cnt = 0;
+    rep(i,n-1){
+        if(a[i]>a[i+1] && cnt == 0){
+            cnt++;
+            continue;
+        }
+        cout << a[i];
+    }
+    if(cnt)cout << a.back();
+    cout << '\n';
 }
 int main(){
     #ifndef ONLINE_JUDGE
@@ -38,8 +48,8 @@ int main(){
     #endif
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
-    int t;cin >> t;
-    Rep(i, 1, t + 1)
+    // int t;cin >> t;
+    // Rep(i, 1, t + 1)
         //cout << "Case #" << i << ": ",
          solve();
     return 0;

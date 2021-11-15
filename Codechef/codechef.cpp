@@ -5,7 +5,6 @@
 #include <bits/stdc++.h>
 #define F first
 #define S second
-#define endl '\n'
 #define pb push_back
 #define all(x) x.begin(), x.end()
 #define Auto(it, v) for (auto &it : v)
@@ -15,32 +14,33 @@
 using ll = long long int;
 using namespace std;
 
-const int inf = 1e9 + 10;
+const int inf = 1e9 + 7;
 const ll INF = 1e18 + 10;
-const int SIZE = 1e6 + 10;
-const ll MOD = 1e9 + 7;
 
-int SetBit(ll n, ll X) { return n | (1LL << X); }
-int ClearBit(ll n, ll X) { return n & ~(1LL << X); }
-int ToggleBit(ll n, ll X) { return n ^ (1LL << X); }
-bool CheckBit(ll n, ll X) { return (bool)(n & (1LL << X)); }
-int CountBit(ll n) { return __builtin_popcountll(n); }
-
-ll arr[SIZE], pre_sum[SIZE];
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
     cin >> n >> m;
-    string Array[n];
-    rep(i,n)cin >> Array[i];
+    vector <ll> a(n),b(m);
+    ll sum_a = 0,sum_b = 0;
+    Auto(i,a)cin >> i,sum_a += i;
+    Auto(i,b)cin >> i,sum_b += i;
+    sort(all(a));sort(all(b),greater<ll>());
+    int ans = 0;
+    while(sum_b>=sum_a){
+        sum_b -= b[ans];
+        sum_b += a[ans];
+        sum_a -= a[ans];
+        sum_a += b[ans];
+        ans++;
+    }
+    cout << ans << '\n';
 }
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
     int t;cin >> t;
-    Rep(i, 1, t + 1)
-        //cout << "Case #" << i << ": ",
-        solve();
+    Rep(i, 1, t + 1)solve();
     return 0;
 }
