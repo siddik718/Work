@@ -1,7 +1,3 @@
-/***
- * Bismillahir Rahmanir Rahim
- * Author:  Abu Bakar Siddik(City University-53 Batch , Dhaka)
- ***/
 #include <bits/stdc++.h>
 #define F first
 #define S second
@@ -14,7 +10,7 @@
 using ll = long long int;
 using namespace std;
 
-const int inf = 1e9 + 7;
+const ll inf = 1e9 + 7;
 const ll INF = 1e18 + 10;
 
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
@@ -27,14 +23,14 @@ void solve(){
     Auto(i,b)cin >> i,sum_b += i;
     sort(all(a));sort(all(b),greater<ll>());
     int ans = 0;
-    while(sum_b>=sum_a){
+    while((sum_b>=sum_a ) and (ans < min(n,m))){
         sum_b -= b[ans];
         sum_b += a[ans];
         sum_a -= a[ans];
         sum_a += b[ans];
         ans++;
     }
-    cout << ans << '\n';
+    cout << (sum_a>sum_b?ans:-1) << '\n';
 }
 int main()
 {
