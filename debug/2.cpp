@@ -2,26 +2,20 @@
 #define rep(i,a,n) for(int i = (a) ; i < (n) ; i++)
 using namespace std;
 using ll = long long int;
-const int MAX = 1000;
-int grid[MAX+5][MAX+5];
-int pfix[MAX+5][MAX+5];
 int main(){
-    ll n,q;cin >> n >> q;
-    rep(i,0,n){
-        rep(j,0,n){
-            char ch;cin >> ch;
-            grid[i+1][j+1] += (ch == '*'); 
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);cout.tie(0);
+    ll test;cin >> test;
+    while(test--){
+        ll x0,n;
+        cin >> x0 >> n;
+        ll x = n / 4 * 4;
+        //cout << "x = " << x << ' ';
+        for(ll i = x+1;i<=n;i++){
+            if(x0&1)x0 += i;
+            else x0 -= i;
         }
-    }
-    rep(i,1,n+1){
-        rep(j,1,n+1){
-            pfix[i][j] = grid[i][j]+pfix[i-1][j]+pfix[i][j-1]-pfix[i-1][j-1];
-        }
-    }
-    while(q--){
-        ll x1,x2,y1,y2;
-        cin >> x1 >> y1 >> x2 >> y2;
-        cout << pfix[x2][y2]-pfix[x1-1][y2]-pfix[x2][y1-1]+pfix[x1-1][y1-1]<<"\n";
+        cout << x0 << '\n';
     }
     return 0;
 }
