@@ -1,7 +1,3 @@
-/***
- * Bismillahir Rahmanir Rahim
- * Author:  Abu Bakar Siddik(City University-53 Batch , Dhaka)
- ***/
 #include <bits/stdc++.h>
 #define F first
 #define S second
@@ -29,17 +25,17 @@ int CountBit(ll n) { return __builtin_popcountll(n); }
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
+    cin >> n;
+    vector <ll> a(n);
+    map<ll,ll> mp;
+    rep(i,n)cin >> a[i],mp[a[i]]++;
+    
 }
 int main(){
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);cout.tie(0);
-    int t;cin >> t;
-    Rep(i, 1, t + 1)
-        //cout << "Case #" << i << ": ",
-         solve();
+    // ios_base::sync_with_stdio(false);
+    // cin.tie(0);cout.tie(0);
+    // int t;cin >> t;
+    // Rep(i, 1, t + 1)
+    solve();
     return 0;
 }

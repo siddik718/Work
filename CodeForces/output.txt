@@ -1,2 +1,6 @@
-aa
-abca
+YES
+4 4 2 1 3 
+YES
+4 3 2 
+NO
+NO

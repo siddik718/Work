@@ -16,24 +16,19 @@ const ll INF = 1e18 + 10;
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
-    cin >> n >> m;
-    vector <ll> a(n),b(m);
-    ll sum_a = 0,sum_b = 0;
-    Auto(i,a)cin >> i,sum_a += i;
-    Auto(i,b)cin >> i,sum_b += i;
-    sort(all(a));sort(all(b),greater<ll>());
-    int ans = 0;
-    while((sum_b>=sum_a ) and (ans < min(n,m))){
-        sum_b -= b[ans];
-        sum_b += a[ans];
-        sum_a -= a[ans];
-        sum_a += b[ans];
-        ans++;
+    string a,ans = "";
+    cin >> n >> a;
+    ll cnt1 = count(all(a),'1');
+    ll cnt0 = n - cnt1;
+    if(min(cnt0,cnt1) == 0)ans = "BOb";
+    else if(min(cnt1,cnt0) == 1)ans = "Alice";
+    else{
+        if(n&1)ans = "Alice";
+        else ans = "Bob";
     }
-    cout << (sum_a>sum_b?ans:-1) << '\n';
+    cout << ans << '\n';
 }
-int main()
-{
+int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
     int t;cin >> t;
