@@ -5,35 +5,47 @@
 #include <bits/stdc++.h>
 #define F first
 #define S second
-#define endl '\n'
 #define pb push_back
 #define all(x) x.begin(), x.end()
-#define Auto(it, v) for (auto &it : v)
-#define rep(i, n) for (int i = 0; i < (n); i++)
-#define Rep(i, a, n) for (int i = a; i < (n); i++)
+#define FOR(i,n) for(int i = 0;i<(n);i++)
 
 using ll = long long int;
 using namespace std;
-
-const int inf = 1e9 + 7;
-const ll INF = 1e18 + 10;
-
-ll n, m, p, q, l, r, k, x, y, z, ans, sum;
-
 void solve(){
-    
+    ll n,m;
+    cin >> n >> m;
+    vector <ll> adj[n+1];
+    FOR(i,m){
+        ll a,b;cin >> a >> b;
+        if(a != b){
+            adj[a].pb(b);
+            adj[b].pb(a);
+        }
+    }
+    ll cnt = 0;
+    FOR(i,n){
+        ll x = adj[i+1].size(); 
+        if(x > 2){
+            cout << "No\n";
+            return;
+        }
+        if(x == 2)cnt++;
+    }
+    if(cnt >= (int)(ceil(n/2.0)) ) {
+        cout << "No\n";
+        return ;
+    }
+    cout << "Yes\n";
 }
 int main()
 {
     #ifndef ONLINE_JUDGE
     freopen("atcoderI.txt", "r", stdin);
-    freopen("atcoderO.txt","w",stdout);
     #endif
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
     // int t;cin >> t;
-    // Rep(i, 1, t + 1)
-        //cout << "Case #" << i << ": ",
-        solve();
+    // while(t--)
+    solve();
     return 0;
 }

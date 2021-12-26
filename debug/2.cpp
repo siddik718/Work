@@ -26,9 +26,7 @@ bool isPowerOf2(ll X) {return X && ( !(X & (X-1) ) ) ; }
 int CountBit(ll n) { return __builtin_popcountll(n); }
 
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
-
 void solve(){
-
 }
 int main(){
     #ifndef ONLINE_JUDGE

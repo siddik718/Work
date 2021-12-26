@@ -29,12 +29,13 @@ int CountBit(ll n) { return __builtin_popcountll(n); }
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
-    
+    string a,s;
+    cin >> a >> s;
+   
 }
 int main(){
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
-    freopen("output.txt","w",stdout);
     #endif
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
