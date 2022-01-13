@@ -1,5 +1,4 @@
 /***
- * Bismillahir Rahmanir Rahim
  * Author: dead!😵
  ***/
 #include <bits/stdc++.h>
