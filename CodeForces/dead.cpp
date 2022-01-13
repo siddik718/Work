@@ -1,5 +1,5 @@
 /***
- * Author: dead!😵
+ * Author: 😂🤣
  ***/
 #include <bits/stdc++.h>
 #define F first
@@ -30,14 +30,22 @@ ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
     cin >> n >> l;
-    vector <int> x(n);
-    FOR(i,n)cin >> x[i];
-    ll ans,mn = INT64_MAX;
-    for(int i = 31;i>=0;i++){
-        FOR(j,n){
-
+    vector <ll> x(n),Set_bit(32);
+    Auto(i,x)cin >> i;
+    for(int i = 0;i<=31;i++){
+        Auto(j,x){
+            if(CheckBit(j,i)){
+                Set_bit[i]++;
+            }
         }
     }
+    int res = 0;
+    FOR(i,32){
+        if(Set_bit[i]>n/2){
+            res |= (1LL<<i);
+        }
+    }
+    cout << res << endl;
 }
 int main(){
     #ifndef ONLINE_JUDGE
@@ -46,7 +54,6 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
     int t;cin >> t;
-    For(i,1,t+1)
-         solve();
+    For(i,1,t+1)solve();
     return 0;
 }
