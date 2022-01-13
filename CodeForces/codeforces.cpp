@@ -25,23 +25,30 @@ int ToggleBit(ll n, ll X) { return n ^ (1LL << X); }
 bool CheckBit(ll n, ll X) { return (bool)(n & (1LL << X)); }
 bool isPowerOf2(ll X) {return X && ( !(X & (X-1) ) ) ; }
 int CountBit(ll n) { return __builtin_popcountll(n); }
-
+bool ckmax(int& a, const int& b) {return a < b ? a = b, true : false;}
+bool ckmin(int& a, const int& b) {return a > b ? a = b, true : false;}
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
-    string a,s;
-    cin >> a >> s;
-   
+    cin >> n >> l;
+    vector <int> x(n);
+    FOR(i,n)cin >> x[i];
+    ll ans,mn = INT64_MAX;
+    for(int i = 31;i>=0;i++){
+        FOR(j,n){
+
+        }
+    }
 }
 int main(){
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);cout.tie(0);
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt", "r", stdin);
+    // #endif
+    // ios_base::sync_with_stdio(false);
+    // cin.tie(0);cout.tie(0);
     int t;cin >> t;
     For(i,1,t+1)
-        //cout << "Case #" << i << ": ",
+        // cout << "Case #" << i << ": ",
          solve();
     return 0;
 }
