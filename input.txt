@@ -1,9 +1,0 @@
-2
-
-longest
-common
-subsequence
-
-programming
-practice
-mango
