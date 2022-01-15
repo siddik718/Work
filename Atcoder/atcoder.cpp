@@ -11,41 +11,45 @@
 
 using ll = long long int;
 using namespace std;
+int Lower_Bound(vector<pair<int,int>> a,int x){
+    int l = 0,r = a.size()-1;
+    while(l < r){
+        int m = l+(r-l)/2;
+        if(x<=a[m].first){
+            r = m;
+        }else{
+            l = m+1;
+        }
+    }
+    if(l < a.size()-1 && a[l].first < x)l++;
+    return l;
+}
 void solve(){
-    ll n,m;
-    cin >> n >> m;
-    vector <ll> adj[n+1];
-    FOR(i,m){
-        ll a,b;cin >> a >> b;
-        if(a != b){
-            adj[a].pb(b);
-            adj[b].pb(a);
+    int n,q;cin >> n >> q;
+    vector <pair<int,int>> a;
+    map <int,int> mp;
+    for(int i = 0,x;i<n;i++){
+        cin >> x;
+        mp[x]++;
+        a.push_back({x,(i+1)});
+    }
+    sort(a.begin(),a.end());
+    while(q--){
+        int x,k;cin >> x >> k;
+        if(mp[x] < k){
+            cout << -1 << endl;
+        }else{
+            k--;
+            int i = Lower_Bound(a,x);
+            cout << a[i+k].second << endl;
         }
     }
-    ll cnt = 0;
-    FOR(i,n){
-        ll x = adj[i+1].size(); 
-        if(x > 2){
-            cout << "No\n";
-            return;
-        }
-        if(x == 2)cnt++;
-    }
-    if(cnt >= (int)(ceil(n/2.0)) ) {
-        cout << "No\n";
-        return ;
-    }
-    cout << "Yes\n";
 }
 int main()
 {
     #ifndef ONLINE_JUDGE
     freopen("atcoderI.txt", "r", stdin);
     #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(0);cout.tie(0);
-    // int t;cin >> t;
-    // while(t--)
     solve();
     return 0;
 }
