@@ -30,22 +30,17 @@ bool ckmin(int& a, const int& b) {return a > b ? a = b, true : false;}
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
-    cin >> n >> l;
-    vector <int> x(n);
-    FOR(i,n)cin >> x[i];
-    ll ans,mn = INT64_MAX;
-    for(int i = 31;i>=0;i++){
-        FOR(j,n){
+    cin >> n;
+    vector <int> a(n),b(n);
+    Auto(i,a)cin >> i;
 
-        }
-    }
 }
 int main(){
-    // #ifndef ONLINE_JUDGE
-    // freopen("input.txt", "r", stdin);
-    // #endif
-    // ios_base::sync_with_stdio(false);
-    // cin.tie(0);cout.tie(0);
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    #endif
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);cout.tie(0);
     int t;cin >> t;
     For(i,1,t+1)
         // cout << "Case #" << i << ": ",
