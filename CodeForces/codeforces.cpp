@@ -30,9 +30,7 @@ bool ckmin(int& a, const int& b) {return a > b ? a = b, true : false;}
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
-    cin >> n;
-    vector <int> a(n),b(n);
-    Auto(i,a)cin >> i;
+    
 
 }
 int main(){

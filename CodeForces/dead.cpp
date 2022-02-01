@@ -27,48 +27,9 @@ int CountBit(ll n) { return __builtin_popcountll(n); }
 bool ckmax(int& a, const int& b) {return a < b ? a = b, true : false;}
 bool ckmin(int& a, const int& b) {return a > b ? a = b, true : false;}
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
-const int N = 100;
-class solution{
+void solve(){
     
-    public:
-        void solve(){
-            cin >> n >> k;
-            vector <ll> a(n);
-            FOR(i,n)cin >> a[i];
-            sort(all(a));
-            ans = 0;
-            int lst = n-1;
-            while(k--){
-                int flag = 0;
-                for(int i = a.size()-1;i>=0;i--){
-                    if(a[i]<a[lst] && a[i] > 0 && a[lst]>0){
-                        flag = 1;
-                        ans += a[i]/a[lst];
-                        a[i] = 0;
-                        a[lst]=0
-                        lst--;
-                    }
-                }
-                if(!flag)break;
-            }
-            while(k--){
-                ll last = a.back();a.pop_back();
-                int flag = 0;
-                for(int i = a.size()-1;i>=0;i--){
-                    if(a[i]<=last && a[i] > 0){
-                        flag = 1;
-                        ans += a[i]/last;
-                        a[i] = 0;
-                    }
-                }
-                if(!flag)break;
-            }
-            for(int i : a){
-                if()
-            }
-            cout << ans << endl;
-        }
-};
+}
 int main(){
     #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
@@ -76,10 +37,6 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
     int t;cin >> t;
-    For(i,1,t+1){
-        //cout << "Case #" << i << ": ";
-        solution WAAAAAAAAA;
-        WAAAAAAAAA.solve();
-    }
+    For(i,1,t+1)solve();
     return 0;
 }
