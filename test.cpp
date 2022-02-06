@@ -1,29 +1,36 @@
-#include<iostream>
-#include<cstring>
-#include<vector>
-#include<algorithm>
+#include<bits/stdc++.h>
 using namespace std;
-#define ll long long int
-#define rep(i,n) for(int i = 0;i<n;i++)
-vector<int>weight,value;
-vector<vector<ll>>dp; 
-int n,w;
-ll func(int i,int j){
-    if(i == 0 || j == 0)return 0;
-    if(dp[i][j] != -1)return dp[i][j];
-    ll tet = func(i-1,j);
-    ll left = j - weight[i-1];
-    if(left>=0){
-        tet = max(tet,func(i-1,left)+value[i-1]);
-    }
-    return dp[i][j] = tet;
+#define F first
+#define S second
+#define Max_N 100005
+#define pb push_back
+#define ll long long
+#define vvi vector<vi>
+#define vi vector<int>
+#define vll vector<ll>
+#define ld long double
+#define pll pair<ll,ll>
+#define vvll vector<vll>
+#define vpii vector<pii>
+#define pii pair<int,int>
+#define sz(x) ((int)(x).size())
+#define all(x) (x).begin(),(x).end()
+#define rep(i,n) for(int i = 0;i<(n);i++)
+#define Rep(i,a,n) for(int i = a;i<(n);i++)
+#define per(i,n) for(int i = (n)-1;i>=0;i--)
+#define Per(i,a,n) for(int i = (n)-1;i>=a;i--)
+
+void solve(){
+
 }
 int main(){
-    cin >> n >> w;
-    weight.resize(n);value.resize(n);
-    rep(i,n)cin >> weight[i] >> value[i];
-    dp.resize(n+1,vector<ll>(w+1,-1));
-    cout << func(n,w) << endl;
+    #ifndef ONLINE_JUDGE
+    freopen("test.txt","r",stdin);
+    #endif
+    cin.tie(0)->sync_with_stdio(0);
+    int t;cin >> t;
+    Rep(i,1,t+1){
+        solve();
+    }
     return 0;
 }
-
