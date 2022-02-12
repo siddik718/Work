@@ -22,13 +22,9 @@
 #define Rep(i,a,n) for(int i = a;i<(n);i++)
 #define per(i,n) for(int i = (n)-1;i>=0;i--)
 #define Per(i,a,n) for(int i = (n)-1;i>=a;i--)
-
-using ll = long long int;
 using namespace std;
-
 const int inf = 1e9 + 7;
 const ll INF = 1e18 + 10;
-
 int SetBit(ll n, ll X) { return n | (1LL << X); }
 int ClearBit(ll n, ll X) { return n & ~(1LL << X); }
 int ToggleBit(ll n, ll X) { return n ^ (1LL << X); }
@@ -37,8 +33,8 @@ bool isPowerOf2(ll X) {return X && ( !(X & (X-1) ) ) ; }
 int CountBit(ll n) { return __builtin_popcountll(n); }
 bool ckmax(int& a, const int& b) {return a < b ? a = b, true : false;}
 bool ckmin(int& a, const int& b) {return a > b ? a = b, true : false;}
+ll compliment(ll x,ll n){return (x^(n-1));}
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
-
 void solve(){
    
 }
