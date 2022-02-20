@@ -8,14 +8,13 @@
 #define Max_N 100005
 #define pb push_back
 #define ll long long
-#define vvi vector<vi>
-#define vi vector<int>
-#define vll vector<ll>
 #define ld long double
-#define pll pair<ll,ll>
+#define vi vector<int>
+#define vvi vector<vi>
+#define vll vector<ll>
 #define vvll vector<vll>
-#define vpii vector<pii>
-#define pii pair<int,int>
+#define pll pair<ll,ll>
+#define vpll vector<pll>
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(),(x).end()
 #define rep(i,n) for(int i = 0;i<(n);i++)
@@ -35,8 +34,18 @@ bool ckmax(int& a, const int& b) {return a < b ? a = b, true : false;}
 bool ckmin(int& a, const int& b) {return a > b ? a = b, true : false;}
 ll compliment(ll x,ll n){return (x^(n-1));}
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
+
 void solve(){
-   
+    cin >> n;
+    vi a(n);
+    rep(i,n)cin >> a[i];
+    Rep(i,1,n){
+        while(a[i]<a[i-1] && i<n){
+            swap(a[i],a[i-1]);
+            i++;
+        }
+    }
+    rep(i,n)cout << a[i] << " \n"[i+1==n];
 }
 int main(){
     #ifndef ONLINE_JUDGE
