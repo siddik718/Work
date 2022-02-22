@@ -39,13 +39,20 @@ void solve(){
     cin >> n;
     vi a(n);
     rep(i,n)cin >> a[i];
-    Rep(i,1,n){
-        while(a[i]<a[i-1] && i<n){
-            swap(a[i],a[i-1]);
-            i++;
+    if(a.back()<0){
+        if(is_sorted(all(a))){
+            cout << 0 << endl;
+        }else{
+            cout << -1 << endl;
+        }
+    }else if(a[n-2]>a[n-1]){
+        cout << -1 << endl;
+    }else{
+        cout << n-2 << endl;
+        Rep(i,1,n-1){
+            cout << i << " " << n-1 << " " << n << endl;
         }
     }
-    rep(i,n)cout << a[i] << " \n"[i+1==n];
 }
 int main(){
     #ifndef ONLINE_JUDGE
