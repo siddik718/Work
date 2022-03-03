@@ -5,7 +5,10 @@ using ll = long long;
 #define For(i,a,n) for(int i = a;i<n;i++)
 #define all(var) var.begin(),var.end()
 #define pb push_back
+#define F first
+#define S second
 void solve(){
+    
 }
 int main(){
     #ifndef ONLINE_JUDGE
