@@ -36,23 +36,7 @@ ll compliment(ll x,ll n){return (x^(n-1));}
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 
 void solve(){
-    cin >> n;
-    vi a(n);
-    rep(i,n)cin >> a[i];
-    if(a.back()<0){
-        if(is_sorted(all(a))){
-            cout << 0 << endl;
-        }else{
-            cout << -1 << endl;
-        }
-    }else if(a[n-2]>a[n-1]){
-        cout << -1 << endl;
-    }else{
-        cout << n-2 << endl;
-        Rep(i,1,n-1){
-            cout << i << " " << n-1 << " " << n << endl;
-        }
-    }
+
 }
 int main(){
     #ifndef ONLINE_JUDGE

@@ -1,10 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
+using ll = long long;
 int main(){
-    int n;cin >> n;
-    vector<int> a(n);
+    ll n;
+    cin >> n;
+    vector <ll> a(n);
     for(auto &i : a)cin >> i;
     sort(a.begin(),a.end());
-    for(auto i : a)cout << i << " " ;cout << endl;
+    ll ans = 1;
+    for(auto i : a){
+        if(i<=ans)ans+=i;
+    }
+    cout << ans << endl;
     return 0;
 }
