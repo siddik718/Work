@@ -10,8 +10,8 @@
 #define ll long long
 #define ld long double
 #define vi vector<int>
-#define vvi vector<vi>
 #define vll vector<ll>
+#define vvi vector<vi>
 #define vvll vector<vll>
 #define pll pair<ll,ll>
 #define vpll vector<pll>
@@ -34,9 +34,43 @@ bool ckmax(int& a, const int& b) {return a < b ? a = b, true : false;}
 bool ckmin(int& a, const int& b) {return a > b ? a = b, true : false;}
 ll compliment(ll x,ll n){return (x^(n-1));}
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
-
+vi right_shift(vi a){
+    int n = a.size();
+    vi x(n);
+    Rep(i,1,n){
+        x[i] = a[i-1];
+    }
+    x[0] = a[n-1];
+    return x;
+}
+vi left_shift(vi a){
+    int n = a.size();
+    vi x(n);
+    Rep(i,0,n-1){
+        x[i] = a[i+1];
+    }
+    x[n-1] = a[0];
+    return x;
+}
 void solve(){
-
+    cin >> n;
+    vi a(n),b(n);
+    rep(i,n)cin >> a[i];
+    rep(i,n)cin >> b[i];
+    vi tmp = b;ans = INT32_MIN;
+    if(a == b)ans = n;
+    else{
+        while(true){
+            ll m = 0;
+            vi x = right_shift(b);
+            if(x == b)break;
+            rep(i,n){
+                if(a[i] == x[i])m++;
+            }
+            ans = max(ans,m);
+        }
+    }
+    cout << ans << endl;
 }
 int main(){
     #ifndef ONLINE_JUDGE

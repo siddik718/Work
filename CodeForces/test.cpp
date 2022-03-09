@@ -1,19 +1,21 @@
 #include<bits/stdc++.h>
+#define FOR(i,n) for(int i = 0;i<(n);i++)
 using namespace std;
-vector <long long> f(21);
-void fact(){
-    f[0] = 1;
-    for(int i = 1;i<=20;i++){
-        f[i] = f[i-1]*i;
-    }
-    for(int i = 0;i<=20;i++){
-        cout << f[i] << " ";
-        if(f[i] <= (long long)(1e12)){
-            cout << "Yes ";
-        }
-    }
+using ll = long long int;
+const double inf = 2*1e18;
+double C;
+double good(double x){
+    return x*x + sqrt(x) >= C;
 }
 int main(){
-    fact();
+    ios_base::sync_with_stdio(false);
+    cin >> C;
+    double l = 0.0,r = inf;
+    FOR(i,150){
+        double m = l + (r - l)/2;
+        if(good(m))r = m;
+        else l = m;
+    }
+    cout << setprecision(20) << l;
     return 0;
 }
