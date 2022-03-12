@@ -2,6 +2,7 @@
 #define F first
 #define S second
 #define pb push_back
+#define vi vector<int>
 #define all(x) x.begin(), x.end()
 #define Auto(it, v) for (auto &it : v)
 #define rep(i, n) for (int i = 0; i < (n); i++)
