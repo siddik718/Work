@@ -8,23 +8,7 @@ using ll = long long;
 #define F first
 #define S second
 void solve(){
-    ll n;cin >> n;
-    ll fact[15];
-    fact[0] = 1;
-    For(i,1,15)fact[i] = fact[i-1]*i;
-    int ans = 100;
-    FOR(i,(1<<14)){
-        ll m = n;
-        FOR(j,14){
-            if(i&(1<<j)){
-                m -= fact[j];
-            }
-        }
-        if(m>=0){
-            ans = min(ans,((__builtin_popcount(i)) + (__builtin_popcountll(m))));
-        }
-    }
-    cout << ans << endl;
+    
 }
 int main(){
     #ifndef ONLINE_JUDGE
