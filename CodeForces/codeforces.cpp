@@ -35,6 +35,7 @@ bool ckmin(int& a, const int& b) {return a > b ? a = b, true : false;}
 ll compliment(ll x,ll n){return (x^(n-1));}
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 void solve(){
+    
 }
 int main(){
     #ifndef ONLINE_JUDGE
