@@ -33,9 +33,33 @@ int CountBit(ll n) { return __builtin_popcountll(n); }
 bool ckmax(int& a, const int& b) {return a < b ? a = b, true : false;}
 bool ckmin(int& a, const int& b) {return a > b ? a = b, true : false;}
 ll compliment(ll x,ll n){return (x^(n-1));}
+// move for knight in chess
+// int dx[] = {-2, -2, -1, -1, 1, 1, 2, 2};
+// int dy[] = {-1, 1, -2, 2, -2, 2, -1, 1};
+// move for 4 direction
+// int dx[] = {-1, 0, 1, 0};
+// int dy[] = {0, 1, 0, -1};
+
 ll n, m, p, q, l, r, k, x, y, z, ans, sum;
 void solve(){
-    
+    string a;cin >> a;
+    int R = 0,r = 0,B = 0,b = 0,G = 0,g = 0,ans = 1;
+    rep(i,a.size()){
+        if(a[i] == 'r'){
+            r++;
+        }
+        else if(a[i] == 'b'){
+            b++;
+        }
+        else if(a[i] == 'g'){
+            g++;
+        }
+        if((a[i] == 'R' && !r) || (a[i] == 'B' && !b) || (a[i] == 'G' && !g)){
+            ans = 0;
+            break;
+        }
+    }
+    cout << (ans ? "YES" : "NO") << endl;
 }
 int main(){
     #ifndef ONLINE_JUDGE
