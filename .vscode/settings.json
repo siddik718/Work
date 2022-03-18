@@ -1,3 +1,6 @@
 {
-    "java.help.shareDiagnostics": true
+    "java.help.shareDiagnostics": true,
+    "files.associations": {
+        "ostream": "cpp"
+    }
 }

@@ -40,26 +40,9 @@ ll compliment(ll x,ll n){return (x^(n-1));}
 // int dx[] = {-1, 0, 1, 0};
 // int dy[] = {0, 1, 0, -1};
 
-ll n, m, p, q, l, r, k, x, y, z, ans, sum;
+ll n, m, p, q, l, r, k, x, y, z, ans, sum ,d;
 void solve(){
-    string a;cin >> a;
-    int R = 0,r = 0,B = 0,b = 0,G = 0,g = 0,ans = 1;
-    rep(i,a.size()){
-        if(a[i] == 'r'){
-            r++;
-        }
-        else if(a[i] == 'b'){
-            b++;
-        }
-        else if(a[i] == 'g'){
-            g++;
-        }
-        if((a[i] == 'R' && !r) || (a[i] == 'B' && !b) || (a[i] == 'G' && !g)){
-            ans = 0;
-            break;
-        }
-    }
-    cout << (ans ? "YES" : "NO") << endl;
+
 }
 int main(){
     #ifndef ONLINE_JUDGE
