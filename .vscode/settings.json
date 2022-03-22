@@ -1,6 +1,7 @@
 {
     "java.help.shareDiagnostics": true,
     "files.associations": {
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }

@@ -21,6 +21,7 @@
 #define Rep(i,a,n) for(int i = a;i<(n);i++)
 #define per(i,n) for(int i = (n)-1;i>=0;i--)
 #define Per(i,a,n) for(int i = (n)-1;i>=a;i--)
+#define print(x,y) cout<<(x)<< y
 using namespace std;
 const int inf = 1e9 + 7;
 const ll INF = 1e18 + 10;
@@ -39,10 +40,25 @@ ll compliment(ll x,ll n){return (x^(n-1));}
 // move for 4 direction
 // int dx[] = {-1, 0, 1, 0};
 // int dy[] = {0, 1, 0, -1};
-
 ll n, m, p, q, l, r, k, x, y, z, ans, sum ,d;
 void solve(){
-
+    cin >> n;
+    string a;cin >> a;
+    int i = 0,ans = 0;
+    while( i < n - 1 ){
+        if(a[i] == '('){
+            i+=2;
+            ans++;
+        }else{
+            int j = i+1;
+            while(j<n && a[j] == '(')j++;
+            if(j == n)break;
+            i = j+1;
+            ans++;
+        }
+    }
+    print(ans, " ");
+    print(n-i, "\n");
 }
 int main(){
     #ifndef ONLINE_JUDGE
@@ -52,7 +68,7 @@ int main(){
     cin.tie(0);cout.tie(0);
     int t;cin >> t;
     Rep(i,1,t+1)
-        // cout << "Case #" << i << ": ",
-         solve();
+        // cout << "Case #" << i << ":\n",
+        solve();
     return 0;
 }
