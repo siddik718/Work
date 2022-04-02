@@ -42,23 +42,7 @@ ll compliment(ll x,ll n){return (x^(n-1));}
 // int dy[] = {0, 1, 0, -1};
 ll n, m, p, q, l, r, k, x, y, z, ans, sum ,d;
 void solve(){
-    cin >> n;
-    string a;cin >> a;
-    int i = 0,ans = 0;
-    while( i < n - 1 ){
-        if(a[i] == '('){
-            i+=2;
-            ans++;
-        }else{
-            int j = i+1;
-            while(j<n && a[j] == '(')j++;
-            if(j == n)break;
-            i = j+1;
-            ans++;
-        }
-    }
-    print(ans, " ");
-    print(n-i, "\n");
+
 }
 int main(){
     #ifndef ONLINE_JUDGE
