@@ -42,7 +42,6 @@ ll compliment(ll x,ll n){return (x^(n-1));}
 // int dy[] = {0, 1, 0, -1};
 ll n, m, p, q, l, r, k, x, y, z, ans, sum ,d;
 void solve(){
-
 }
 int main(){
     #ifndef ONLINE_JUDGE

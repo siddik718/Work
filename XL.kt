@@ -1,13 +1,6 @@
-// variable : 
-// Global 
-var Name: String = "John"
+import java.util.*
 fun main(){
-    // assign once : val
-    // val name: String = "Nahid"
-    // name = "Siddik";
-    // println(name)
-    // can be reassigned : var
-    var name:String = "Nahid"
-    println(name)
-    println(Name)
+    var t = readLine()!!.toInt()
+    while(t-- > 0){
+    }
 }
