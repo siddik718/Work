@@ -17,10 +17,8 @@
 #define vpll vector<pll>
 #define sz(x) ((int)(x).size())
 #define all(x) (x).begin(),(x).end()
-#define rep(i,n) for(int i = 0;i<(n);i++)
-#define Rep(i,a,n) for(int i = a;i<(n);i++)
-#define per(i,n) for(int i = (n)-1;i>=0;i--)
-#define Per(i,a,n) for(int i = (n)-1;i>=a;i--)
+#define rep(i,a,n) for(auto i = (a); i <= (n); i++)
+#define per(i,a,n) for(auto i = (n); i >= (a); i--)
 #define print(x,y) cout<<(x)<< y
 using namespace std;
 const int inf = 1e9 + 7;
@@ -40,8 +38,13 @@ ll compliment(ll x,ll n){return (x^(n-1));}
 // move for 4 direction
 // int dx[] = {-1, 0, 1, 0};
 // int dy[] = {0, 1, 0, -1};
-ll n, m, p, q, l, r, k, x, y, z, ans, sum ,d;
+ll n, m, p, q, l, r, k, x, y, z, ans, sum ,d,b;
 void solve(){
+    cin >> n >> r >> b;
+    vector <char> s(n);
+    for(auto i : s){
+        cout << i;
+    }cout << endl;
 }
 int main(){
     #ifndef ONLINE_JUDGE
@@ -50,7 +53,7 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
     int t;cin >> t;
-    Rep(i,1,t+1)
+    rep(i,1,t)
         // cout << "Case #" << i << ":\n",
         solve();
     return 0;

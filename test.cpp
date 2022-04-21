@@ -2,14 +2,17 @@
 #define rep(i,a,n) for(ll i = (a); i <= (n); i++)
 using namespace std;
 using ll = long long;
-void solve(){
-}
 int main(){
-    #ifndef ONLINE_JUDGE
-    freopen("test.in", "r", stdin);
-    #endif
-    ios::sync_with_stdio(false);
-    int test;cin >> test;
-    while(test--)solve();
+    int T;cin >> T;
+    while(T--){
+        ll n,m;cin >> n >> m;
+        if(n<m)swap(n,m);
+        ll ans = 0;
+        if(m == 1 && n>2)ans=-1;
+        else{
+            ans = 2 * ( m - 1) + 2 * ( n - m ) + (n-m) % 2;
+        }
+        cout << ans << endl;
+    }
     return 0;
 }
