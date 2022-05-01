@@ -40,11 +40,8 @@ ll compliment(ll x,ll n){return (x^(n-1));}
 // int dy[] = {0, 1, 0, -1};
 ll n, m, p, q, l, r, k, x, y, z, ans, sum ,d,b;
 void solve(){
-    cin >> n >> r >> b;
-    vector <char> s(n);
-    for(auto i : s){
-        cout << i;
-    }cout << endl;
+    cin >> n;
+    
 }
 int main(){
     #ifndef ONLINE_JUDGE
@@ -52,7 +49,7 @@ int main(){
     #endif
     ios_base::sync_with_stdio(false);
     cin.tie(0);cout.tie(0);
-    int t;cin >> t;
+    int t=1;//cin >> t;
     rep(i,1,t)
         // cout << "Case #" << i << ":\n",
         solve();
