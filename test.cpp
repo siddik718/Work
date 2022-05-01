@@ -2,17 +2,28 @@
 #define rep(i,a,n) for(ll i = (a); i <= (n); i++)
 using namespace std;
 using ll = long long;
-int main(){
-    int T;cin >> T;
-    while(T--){
-        ll n,m;cin >> n >> m;
-        if(n<m)swap(n,m);
-        ll ans = 0;
-        if(m == 1 && n>2)ans=-1;
-        else{
-            ans = 2 * ( m - 1) + 2 * ( n - m ) + (n-m) % 2;
+class Solution {
+    public:
+        void f(int idx,int k,vector<int>&a,vector<int>&tmp,vector<vector<int>>&ans){
+            if(idx == a.size()){
+                if(k==0)ans.push_back(tmp);
+                return;
+            }
+            if(a[idx] <= k){
+                tmp.push_back(a[idx]);
+                f(idx,k-a[idx],a,tmp,ans);
+                tmp.pop_back();
+            }
+            f(idx+1,k,a,tmp,ans);
         }
-        cout << ans << endl;
-    }
+    public:
+        vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+            vector<vector<int>> ans;
+            vector<int>tmp;
+            f(0,target,candidates,tmp,ans);
+            return ans;
+        }
+};
+int main(){
     return 0;
 }
