@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List,Table,Forms</title>
+</head>
+
+<body>
+    <ul>
+        <li>about me</li>
+        <ul>
+            <li>name</li>
+            <li>School</li>
+            <li>Education</li>
+        </ul>
+        <li>Services</li>
+        <ol type="i">
+            <li>Web Development</li>
+            <li>Web Design</li>
+            <li>Web Hosting</li>
+        </ol>
+        <li>Contrac Me</li>
+        <ul>
+            <li>Email</li>
+            <li>Phone</li>
+            <li>Address</li>
+        </ul>
+    </ul><br>
+    <manu>
+        <!-- <li><button>onclick="copy()">Copy</button></li> -->
+        <li><button onclick="copy()">Copy</button></li>
+        <li><button onclick="cut()">Cut</button></li>
+        <li><button onclick="paste()">Paste</button></li>
+    </manu><br>
+
+
+
+
+
+
+    <!-- table -->
+
+    <div>
+        <table>
+            <caption>Information Of Student</caption>
+            <colgroup>
+                <col>
+                <col span="2" class="batman">
+                <col span="2" class="flash">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th colspan="2">Education</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nahid</td>
+                    <td>City University</td>
+                    <td>CSE</td>
+                </tr>
+                <tr>
+                    <td>Sakib</td>
+                    <td>City University</td>
+                    <td>CSE</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><br>
+
+    <!-- Form -->
+
+    <div>
+        <h3>Travel From</h3>
+        <form action="form.php">
+            <input type="text" placeholder="Enter Your Name"><br>
+            <label for="sectionida">
+                <input type="radio" value="Section A" name="section" id="sectionida"> Section A
+            </label>
+            <label for="sectionidb">
+                <input type="radio" value="Section B" name="section" id="sectionidb"> Section B
+            </label>
+            <label for="sectionidc">
+                <input type="radio" value="Section C" name="section" id="sectionidc"> Section C
+            </label><br>
+            <input type="checkbox" name="canteen" id="foodcanteen">
+            <label for="foodcanteen">Do You Want Food Canteen Card</label><br>
+
+            <textarea name="explain" id="explain" cols="30" rows="10" placeholder="Explain Why You Want to Join"></textarea><br>
+
+
+            <select name="Car" id="Car">
+                <option value="no-car">Select any Car</option>
+                <option value="BMW">BMW</option>
+                <option value="Audi">Audi</option>
+                <option value="Juger">Juger</option>
+            </select><br>
+
+            <input type="submit" value="Submit">
+
+        </form>
+    </div>
+
+
+
+    <!-- video embed -->
+
+    <div>
+        <!-- online video embed -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BsDoLVMnmZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br>
+        <iframe src="http://www.bing.com" frameborder="" width="600"></iframe> <!-- No a good use -->
+        <br>
+        <!-- offline video embed -->
+        <video src="Panchayat.S02E01.Naach.1080p.AMZN.WEB-DL.DDP5.1.H.264-TBD.mkv" controls autoplay loop  width="500"></video>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
