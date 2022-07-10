@@ -1,0 +1,16 @@
+.intro {
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}

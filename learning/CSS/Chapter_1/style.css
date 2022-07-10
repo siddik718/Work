@@ -1,0 +1,12 @@
+#first {
+  background-color: aqua;
+}
+
+#second {
+  background-color: yellow;
+}
+
+.bg-blue {
+  background-color: blue;
+  color: white;
+}
