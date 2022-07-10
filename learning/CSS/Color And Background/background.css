@@ -1,0 +1,18 @@
+body{
+    /* width: 344px;
+    height: 1444px; */
+    border: 2px solid red;
+    background-image: url('index.jpg');
+    background-repeat: no-repeat;
+    color: white;
+    background-attachment: local;
+
+}
+.containar{
+    background-color: #f0f0f0;
+    color: #000;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
