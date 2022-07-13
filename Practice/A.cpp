@@ -8,6 +8,7 @@ using ld = long double;
 using namespace std;
 const ll inf = 1e9+7;
 const ll Inf = 1e18;
+const int MaxN = 4e5+5;
 void solve(){
 }
 int main(){
