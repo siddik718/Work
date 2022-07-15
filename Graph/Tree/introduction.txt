@@ -1,8 +1,0 @@
-**Root,childreen,leaf node,subtree,ancestry.
-
-There are 5 types of Binary Tree.
-1)Full BT : Every node has 0 or 2 childreen.
-2)Complete BT : The last level has all node as left as possible.
-3)perfect BT : all leaf nodes are at same level.
-4)Balanced BT : max height is log(node).
-5)Degenirate BT : every node has only child

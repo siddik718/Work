@@ -1,0 +1,50 @@
+Tree is a connected acyclic graph with n nodes and n-1 edges.
+There is always a unique path between any two nodes of a tree.
+Removing any edges from the tree devides it into two trees.
+Adding a new edges ti the tree creates a cycle. 
+
+The leaves/leaf of tree is a node who have 1 degree and no child node.
+
+Trees Are Two Type (ie : Rooted & UnRooted)
+
+
+The subtree of a node n are the set of nodes that have node n as an ancester .
+
+The depth/level of a node is its distance from the root node to that node.
+The height of a node is the longest path from that node to any leaf node.
+
+A start Graph -> Only (1/2) node has degree greater than 1.
+
+A forest graph -> each connected component is a tree.
+
+
+
+Tree traversal(DFS):
+    void dfs(int root,int parent){
+        for(auto child : adj[root]){
+            if(child != parent){
+                dfs(child,root);
+            }
+        }
+    }
+
+
+
+find for each node the number of node in its subtree or 
+the length of the longest path from any node to a leaf.
+    void dfs(int root,int parent){
+        int sub_tree = 0;
+        for(auto child ; adj[root]){
+            if(child == parent)continue;
+            sub_tree += (1 + no_subtree[child]);
+        }
+        no_subtree[root] = sub_tree;
+    }
+
+
+The diameter of a tree is the max length of a path between two nodes.(We can use Double dfs/bfs or single dfs with dp).
+
+
+
+
+

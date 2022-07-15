@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Position </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            display: inline;
+        }
+        header{
+            background-color: #333;
+            height: 70px;
+            color: white;
+            position: sticky;
+            top: 0;
+        }
+        footer{
+            background-color: #333;
+            height: 70px;
+            color: white;
+        }
+        p{
+            text-align: center;
+            border: 2px solid red;
+        }
+        .container{
+            background-color: #eee;
+            height: 11111150vh;
+            width: 50vw;
+            margin: auto
+        }
+        .box1{
+            background-color: chartreuse;
+            height: 200px;
+            width: 200px;
+            /* position: relative; */
+            /* position: absolute; */
+            /* position: fixed; */
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+        .center{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias soluta minus, recusandae iusto adipisci quis repudiandae esse corrupti, blanditiis labore itaque asperiores, voluptate saepe similique repellendus aliquam amet vitae reiciendis velit unde!</p> 
+             <div class="box1">
+                <p>Click Here To Chat With Us</p>
+            </div>
+            <!-- <div class="box2">
+                <p>This is my box2</p>
+            </div> -->
+        </div>
+    </main>
+    <footer>
+        <div class="center">
+            &copy; Copyright 2017
+        </div>
+    </footer>
+</body>
+</html>
