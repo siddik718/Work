@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background: #e3e3e3;
+            padding: 20px;
+            text-align: center;
+        }
+        header ul li{
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .box1{
+            background-color:blue;
+            color:white;
+            float: left;
+            /* clear: none; */
+            /* clear: right; */
+            /* float: right;  */
+            width: 450px;
+            height: 250px;
+        }
+        .box2{
+            background-color:red;
+            color:white;
+            /* float: left; */
+            /* clear: none; */
+            float: right;
+            width: 450px;
+            height: 250px;
+        }
+        footer{
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="box1">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi porro doloremque sapiente! Itaque, natus voluptatibus maiores assumenda dolorem cum nemo dolores explicabo soluta ratione iusto repellendus repellat quaerat accusamus accusantium. Esse, quis.
+            </div>
+            <div class="box2">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil libero nam molestiae saepe illo nulla obcaecati minus, vitae eaque commodi, fugit natus ab.
+            </div>
+        </div>
+    </main>
+    <footer>
+            Copyright &copy; 2022, All rights reserved.
+    </footer>
+</body>
+
+</html>

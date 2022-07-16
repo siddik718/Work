@@ -10,6 +10,7 @@ const ll inf = 1e9+7;
 const ll Inf = 1e18;
 const int MaxN = 4e5+10;
 void solve(){
+
 }
 int main(){
     ios::sync_with_stdio(0);cin.tie(0);
