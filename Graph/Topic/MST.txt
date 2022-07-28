@@ -1,0 +1,4 @@
+// Spnaning Tree - > it's a graph consist of N nodes and N-1 edges 
+// Minimum Spanning Tree - > it's a graph consist of N nodes and N-1 edges with minimum weight as possible.
+// two Types of MST - > Prim's Algorithm and Kruskal's Algorithm
+// Prim's algorithm: https://www.youtube.com/watch?v=HnD676J56ak&list=PLgUwDviBIf0rGEWe64KWas0Nryn7SCRWw&index=19

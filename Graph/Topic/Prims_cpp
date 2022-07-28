@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    fropen("input.txt","r",stdin);
+    int n,m;
+    cin >> n >> m;
+    vector<pair<int,int>> adj[n];
+    for(int i=0;i<m;i++){
+        int u,v,w;
+        cin >> u >> v >> w;
+        adj[u].push_back({v,w});
+        adj[v].push_back({u,w});
+    }
+    // Prim's Start Here.
+    vector<int>parent(n,-1),mst(n,0),key(n,INT_MAX);
+    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+    key[0]=0;
+    pq.push({key[0],0});// first weight then vertex
+    for(int cnt = 0; cnt < n-1; cnt++){
+        // int mn = INT_MAX,u;
+        // for(int i=0;i<n;i++){
+        //     if(mst[i]==0 && key[i]<mn){
+        //         mn = key[i];
+        //         u = i;
+        //     }
+        // } 
+        int u = pq.top().second; // reduce the time complexity
+        pq.pop();
+        
+        mst[u]=1;
+        for(auto [v,w] : adj[u]){
+            if(mst[v]==0 && key[v]>w){
+                key[v]=w;
+                pq.push({key[v],v});
+                parent[v]=u;
+            }
+        }
+    }
+    // Prim's End Here.
+    for(int i = 1;i<n;i++){
+        cout<<parent[i]<<" "<<i<<" "<<key[i]<<"\n";
+    }
+    return 0;
+}

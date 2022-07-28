@@ -6,6 +6,7 @@ public class Main{
 		PrintWriter out=new PrintWriter(System.out);
 		int T=fs.nextInt();
 		for (int tt=0; tt<T; tt++) {
+			out.println("NO");
 		}
 		out.close();
     }
