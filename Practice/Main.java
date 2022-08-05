@@ -1,12 +1,15 @@
 import java.io.*;
+import java.math.BigInteger;
 import java.util.*;
 public class Main{
     public static void main(String[] args){
         FastScanner fs=new FastScanner();
 		PrintWriter out=new PrintWriter(System.out);
-		int T=fs.nextInt();
-		for (int tt=0; tt<T; tt++) {
-			out.println("NO");
+
+		int t = fs.nextInt();
+
+		for (int tt = 1; tt <= t; tt++) {
+
 		}
 		out.close();
     }
