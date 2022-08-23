@@ -1,0 +1,180 @@
+//------------------------------------------------/*/ Bismilahir Rahmanir Rahim/*/---------------//
+//--------------------------------------------// Starting In the name of Almighty Allah//--------//
+
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define ld long double
+#define pii pair<ll, ll>
+#define mii map<ll, ll>
+#define pb push_back
+#define clr(v, d) memset(v, d, sizeof(v))
+#define pi acos(-1.0);
+#define rep(i, a, b) for (ll i = a; i <= b; i++)
+#define pep(i, a, b) for (ll i = a; i >= b; i--)
+#define all(a) (a).begin(), (a).end()
+#define rall(a) (a).rbegin(), (a).rend()
+#define pq_mini priority_queue<ll, vector<ll>, greater<ll>>
+#define pq_minp priority_queue<pii, vector<pii>, greater<pii>>
+#define bit_set(x, i) ((x) |= (1LL << (i)))
+#define bit_clear(x, i) ((x) &= ~(1LL << (i)))
+#define bit_flip(x, i) ((x) ^= (1LL << (i)))
+#define bit_check(x, i) (!!((x) & (1LL << (i))))
+#define strip_lsb(x) x &(x - 1)
+#define lsb(x) __builtin_ctzll(x)
+#define msb(x) (63 - __builtin_clzll((x)))
+#define count_1(x) __builtin_popcountll(x)
+#define count_0(x) (sizeof(x) * 8) - count_1(x)
+#define gcd __gcd
+#define binary(n, bits) bitset<bits>(n)
+template <typename T>
+void Unique(T &a)
+{
+	sort(all(a));
+	a.erase(unique(all(a)), a.end());
+}
+template <typename T>
+using matrix = vector<vector<T>>;
+template <typename T>
+using rubix = vector<vector<vector<T>>>;
+
+//---------------------------------------macros end-------------------------------------//
+
+ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }
+ll mul(ll a, ll b, ll mod)
+{
+	ll res = 0;
+	a = a % mod;
+	while (b)
+	{
+		if (b & 1)
+		{
+			res = (res + a) % mod;
+			b--;
+		}
+		else
+		{
+			a = (a + a) % mod;
+			b >>= 1;
+		}
+	}
+
+	return res % mod;
+}
+
+ll powmod(ll a, ll n, ll mod)
+{
+
+	ll res = 1;
+	while (n)
+	{
+		if (n & 1)
+		{
+			res = mul(res, a, mod), n--;
+		}
+		else
+		{
+			a = mul(a, a, mod), n >>= 1;
+		}
+	}
+	return res % mod;
+}
+
+bool is_prime(ll n)
+{
+	if (n < 4)
+		return n == 2 || n == 3;
+	for (ll i = 1; i <= 5; i++)
+	{
+		ll a = 2 + rand() % (n - 3);
+		if (powmod(a, n - 1, n) != 1)
+			return false;
+	}
+	return true;
+}
+ll pow(ll a, ll n)
+{
+	ll res = 1;
+	while (n > 0)
+	{
+		if (n & 1)
+			res = (res * a);
+		a = (a * a);
+		n >>= 1;
+	}
+	return res;
+}
+ll inv(ll n, ll mod) { return powmod(n, mod - 2, mod); }
+
+/*----------------------Graph Moves----------------*/
+// const ll dx[]={+1,-1,+0,+0};
+// const ll dy[]={+0,+0,+1,-1};
+// const ll dx[]={+0,+0,+1,-1,-1,+1,-1,+1};   // Kings Move
+// const ll dy[]={-1,+1,+0,+0,+1,+1,-1,-1};  // Kings Move
+/*------------------------------------------------*/
+const ll N = 2e5 + 5;
+const ll mod = 1e9 + 7;
+const ll INF = 1e9;
+const ld EPS = 1e-9;
+
+//---------------------------------------------Let's play-------------------------------------//
+
+void PlayGround()
+{
+
+	ll n, k;
+	cin >> n >> k;
+	vector<ll> num(n), fr(k);
+	rep(i, 0, n - 1) cin >> num[i];
+	rep(i, 0, k - 1) cin >> fr[i];
+
+	sort(all(num), greater<ll>());
+	sort(all(fr));
+	ll ans = 0;
+	ll i = 0;
+	for (i = 0; i < k; i++)
+	{
+		ans += num[i];
+		fr[i]--;
+		if (fr[i] == 0)
+			ans += num[i];
+	}
+	ll p = 0;
+	while (fr[p] == 0)
+	{
+		p++;
+	}
+	while (p < k && (i + fr[p] - 1) < n)
+	{
+		ans += num[i + fr[p] - 1];
+		i += fr[p];
+		p++;
+	}
+
+	cout << ans << "\n";
+
+	return;
+}
+
+signed main()
+{
+
+	ios::sync_with_stdio(0);
+	cin.tie(0), cout.tie(0);
+	// #ifndef ONLINE_JUDGE
+	// freopen("input.txt", "r", stdin);
+	// freopen("output.txt", "w", stdout);
+	// #endif
+
+	ll t = 1;
+
+	cin >> t;
+	for (ll test = 1; test <= t; test++)
+	{
+		// cout << "Case #" << test << ": ";
+
+		PlayGround();
+	}
+
+	return 0;
+}
